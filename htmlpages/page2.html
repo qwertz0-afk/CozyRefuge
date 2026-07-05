@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/primeflex/primeflex.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="script/script.js" defer></script>
+        <title>Cozy Refuge</title>
+    </head>
+    <body>
+        <img id ="arrow_left" src="media/left.png" class="arrows">
+        <div id="curtain" class="curtain curtain_in"></div>
+        <p class="title font-bold m-5 text-2xl select-none">Cozy Refuge</p>
+        <video autoplay muted loop class="bg">
+            <source src="media/background.mp4">
+        </video>
+        <div id="weatherbtn" class="weatherbtn">
+            <p class="weatherbtntext font-bold select-none">Weather</p>
+            <img src="media/weather.png"/>
+        </div>
+        <div class="flex justify-content-end m-5">
+            <div id="weatherbloc" class="weatherdiv flex justify-content-center align-items-center flex-column opacity-0">
+            <div id="circle" class="circlediv opacity-0">
+                <svg>
+                    <circle cx="50" cy="50" r="25" class="circle"/>
+                </svg>
+            </div>
+                <p id="countryNcity" class="countryNcity font-bold select-none"></p>
+                <p id="temperature" class="temperature font-bold select-none text-3xl"></p>
+                <p id="description" class="description font-bold select-none"></p>
+            </div>
+        </div>
+    </body>
+</html>
