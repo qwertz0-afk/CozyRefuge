@@ -34,30 +34,9 @@ if (leftarrow) {
 });
 }
 if (window.location.pathname.includes("page2.html")) {
-    setInterval(weatherupdate(), 300000);
-}
-if (weatherbutton) {
-    axios.get('http://localhost:3000/weather')
-    .then(response => {
-        const answer = response.data;
-        if (answer == "on") {
-            weatherwidget.classList.replace("opacity-0", "opacity-100");
-        }
-        else {
-            weatherwidget.classList.replace("opacity-100", "opacity-0");
-        }
-    })
-        weatherbutton.addEventListener("mousedown", () => {
-            if (weatherwidget.classList.contains("opacity-0")) {
-                weatherwidget.classList.replace("opacity-0", "opacity-100");
-                axios.post('http://localhost:3000/weather_shown');
-            }
-            else {
-                weatherwidget.classList.replace("opacity-100", "opacity-0");
-                axios.post('http://localhost:3000/weather_hidden');
-            }
-        });
-    }   
+    weatherupdate();
+    setInterval(weatherupdate, 300000);
+} 
 function weatherupdate() {
     if (circle) {
         circle.classList.remove("opacity-0");

@@ -6,7 +6,6 @@ app.use(cors());
 app.use(express.text());  
 
 port = process.env.PORT || 3000;
-let weather = "off";
 
 app.post('/', (request, response) => {
     const receivedData = request.body;
@@ -15,24 +14,6 @@ app.post('/', (request, response) => {
         decision = "yes";
     }
     response.send(decision);
-});
-app.get('/weather', (request, response) => {
-    let res;
-    if (weather == "off") {
-        res = "off";
-    }
-    else {
-        res = "on";
-    }
-    response.send(res);
-});
-app.post('/weather_shown', (request, response) => {
-    weather = "on";
-    response.sendStatus(204);
-});
-app.post('/weather_hidden', (request, response) => {
-    weather = "off";
-    response.sendStatus(204);
 });
 app.get('/getweather', async (request, response) => {
     try {
