@@ -5,6 +5,7 @@ const app = express();
 app.use(cors());          
 app.use(express.text());  
 
+port = process.env.PORT || 3000;
 let weather = "off";
 
 app.post('/', (request, response) => {
@@ -61,4 +62,4 @@ app.get('/getweather', async (request, response) => {
     
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+app.listen(port, '0.0.0.0', () => console.log(`Server running on port ${port}`));
