@@ -15,11 +15,11 @@
         <video autoplay muted loop class="bg">
             <source src="../media/background.mp4">
         </video>
-        <div id="weatherbtn" class="weatherbtn">
-            <p class="weatherbtntext font-bold select-none">Weather</p>
-            <img src="../media/weather.png"/>
+        <div id="homebtn" class="homebtn">
+            <p class="homebtntext font-bold select-none">Home</p>
+            <img src="../media/home.png"/>
         </div>
-        <div class="flex justify-content-end m-5">
+        <div class="flex justify-content-end m-5 flex-grow-1">
             <div id="weatherbloc" class="weatherdiv flex justify-content-center align-items-center flex-column">
             <div id="circle" class="circlediv opacity-0">
                 <svg>
@@ -31,5 +31,6 @@
                 <p id="description" class="description font-bold select-none"></p>
             </div>
         </div>
+        <p id="server-warning" class="font-bold select-none text-xl text-center hidden absolute serverwarning" style="color: white; font-family: 'Roboto Slab';">Server is not responding</p>
     </body>
 </html>

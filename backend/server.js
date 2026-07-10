@@ -7,7 +7,7 @@ app.use(express.text());
 
 port = process.env.PORT || 3000;
 
-app.post('/', (request, response) => {
+app.post('/pass', (request, response) => {
     const receivedData = request.body;
     let decision = "no";
     if (receivedData == "amine") {
@@ -42,5 +42,7 @@ app.get('/getweather', async (request, response) => {
     }
     
 });
-
+app.get('/', (request, response) => {
+    response.sendStatus(200);
+});
 app.listen(port, '0.0.0.0', () => console.log(`Server running on port ${port}`));

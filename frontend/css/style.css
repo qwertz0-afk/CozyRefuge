@@ -87,24 +87,25 @@ body {
     position: absolute;
     z-index: -1;
 }
-.weatherbtn {
+.homebtn {
     background-color: rgb(142, 213, 231);
-    border-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
     height: 50px;
     width: 200px;
     position: absolute;
     margin-top: 150px;
-    margin-left: -155px ;
+    margin-left: -150px ;
     transition: margin-left 0.4s cubic-bezier(0.65, 0, 0.35, 1);
     display: flex;
     align-content: center;
     justify-content: end;
     mix-blend-mode: screen;
 }
-.weatherbtn:hover {
-    margin-left: -10px;
+.homebtn:hover {
+    margin-left: 0px;
 }
-.weatherbtntext {
+.homebtntext {
     text-align: center;
     flex-grow: 1;
     color: black;
@@ -172,4 +173,9 @@ body {
 @keyframes rotation {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+.serverwarning {
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
 }

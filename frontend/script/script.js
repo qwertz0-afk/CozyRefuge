@@ -6,6 +6,8 @@ const leftarrow = document.getElementById("arrow_left");
 const warnT = document.getElementById("warn");
 const passwordinput = document.getElementById("pass");
 const circle = document.getElementById("circle");
+const serverwarning = document.getElementById("server-warning");
+
 if (curtain) {
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -25,6 +27,21 @@ if (firstbtn) {
         passcheck()
 });
 }
+function servercheck() {
+    axios.get('http://localhost:3000/')
+    .then(response => {
+        if (serverwarning) {
+            serverwarning.classList.add("hidden");
+        }
+    })
+    .catch(error => {
+        if (serverwarning) {
+            serverwarning.classList.remove("hidden");
+        }
+    })
+}
+servercheck();
+setInterval(servercheck, 5000);    
 if (leftarrow) {
     leftarrow.addEventListener("mousedown", () => {
         curtain.classList.replace("curtain_out", "curtain_in");
@@ -62,7 +79,7 @@ function passcheck() {
         warnT.classList.remove("absolute");
     }
     else {
-        axios.post('http://localhost:3000', password, {
+        axios.post('http://localhost:3000/pass', password, {
         headers: {
             'Content-Type': 'text/plain'
         }
