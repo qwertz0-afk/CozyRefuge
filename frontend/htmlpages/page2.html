@@ -12,18 +12,15 @@
         <img id ="arrow_left" src="../media/left.png" class="arrows">
         <div id="curtain" class="curtain curtain_in"></div>
         <p class="title font-bold m-5 text-2xl select-none">Cozy Refuge</p>
-        <video autoplay muted loop class="bg">
-            <source src="../media/background.mp4">
-        </video>
-        <div id="homebtn" class="homebtn">
-            <p class="btntext font-bold select-none">Home</p>
+        <div id="homebtn" class="homebtn cursor-pointer">
+            <p class="btntext font-bold select-none cursor">Home</p>
             <img src="../media/home.png"/>
         </div>
-        <div id="settingsbtn" class="settingsbtn">
+        <div id="settingsbtn" class="settingsbtn cursor-pointer">
             <p class="btntext font-bold select-none">Settings</p>
             <img src="../media/settings.png" style="scale: 90%;"/>
         </div>
-        <div class="flex justify-content-end m-5 flex-grow-1">
+        <div class="flex m-5 flex-grow-1">
             <div id="weatherbloc" class="weatherdiv flex justify-content-center align-items-center flex-column">
             <div id="circle" class="circlediv opacity-0">
                 <svg>
@@ -34,7 +31,12 @@
                 <p id="temperature" class="temperature font-bold select-none text-3xl"></p>
                 <p id="description" class="description font-bold select-none"></p>
             </div>
+            <div class="notesdiv">
+                <textarea id="stickynotes" class="stickynotes font-bold select-none overflow-auto outline-none" placeholder="Take a note..."></textarea>
+                <img id="savebtn" src="../media/save.png" class="savebtn cursor-pointer" onclick="saveNotes()"/>
+                <img id="clearbtn" src="../media/clear.png" class="clearbtn cursor-pointer" onclick="clearNotes()"/>
+            </div>
+            <p id="server-warning" class="font-bold select-none text-xl text-center hidden absolute serverwarning" style="color: white; font-family: 'Roboto Slab';">Server is not responding !</p>
         </div>
-        <p id="server-warning" class="font-bold select-none text-xl text-center hidden absolute serverwarning" style="color: white; font-family: 'Roboto Slab';">Server is not responding</p>
     </body>
 </html>

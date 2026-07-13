@@ -7,6 +7,7 @@ const warnT = document.getElementById("warn");
 const passwordinput = document.getElementById("pass");
 const circle = document.getElementById("circle");
 const serverwarning = document.getElementById("server-warning");
+const stickynotes = document.getElementById("stickynotes");
 
 if (curtain) {
     requestAnimationFrame(() => {
@@ -97,6 +98,27 @@ function passcheck() {
                 warnT.classList.replace("opacity-0", "opacity-100");
                 warnT.classList.remove("absolute");
             }
-        })
+        });
     }
 }
+if (stickynotes) {
+    axios.get('http://localhost:3000/savenotes')
+    .then(response => {
+        const notes = response.data;
+        stickynotes.value = notes;
+    });
+}
+function saveNotes() {
+    const notes = document.getElementById("stickynotes").value;
+    axios.post('http://localhost:3000/savenotes', notes, {
+        headers: {
+            'Content-Type': 'text/plain'
+        }
+    });
+}
+function clearNotes() {
+    const notes = document.getElementById("stickynotes");
+    notes.value = "";
+}
+
+    

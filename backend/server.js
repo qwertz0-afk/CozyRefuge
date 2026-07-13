@@ -5,6 +5,7 @@ const app = express();
 app.use(cors());          
 app.use(express.text());  
 
+let notes = "";
 port = process.env.PORT || 3000;
 
 app.post('/pass', (request, response) => {
@@ -44,5 +45,11 @@ app.get('/getweather', async (request, response) => {
 });
 app.get('/', (request, response) => {
     response.sendStatus(200);
+});
+app.post('/savenotes', (request, response) => {
+    notes = request.body;
+});
+app.get('/savenotes', (request, response) => {
+    response.send(notes);
 });
 app.listen(port, '0.0.0.0', () => console.log(`Server running on port ${port}`));
