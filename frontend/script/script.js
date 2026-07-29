@@ -8,7 +8,6 @@ const passwordinput = document.getElementById("pass");
 const circle = document.getElementById("circle");
 const serverwarning = document.getElementById("server-warning");
 const stickynotes = document.getElementById("stickynotes");
-
 if (curtain) {
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -51,7 +50,7 @@ if (leftarrow) {
         }, 750);
 });
 }
-if (window.location.pathname.includes("page2.html")) {
+if (window.location.pathname.includes("home.html")) {
     weatherupdate();
     setInterval(weatherupdate, 300000);
 } 
@@ -90,13 +89,14 @@ function passcheck() {
             if (decision == 'yes') {
                 curtain.classList.replace("curtain_out", "curtain_in");
                 setTimeout(() => {
-                    window.location.replace("page2.html");
+                    window.location.replace("home.html");
                 }, 750);
             }
             else {
                 warnT.textContent = "Password is incorrect";
                 warnT.classList.replace("opacity-0", "opacity-100");
                 warnT.classList.remove("absolute");
+                passwordinput.value = "";
             }
         });
     }
@@ -120,5 +120,9 @@ function clearNotes() {
     const notes = document.getElementById("stickynotes");
     notes.value = "";
 }
-
-    
+function gotohome() {
+    window.location.replace("home.html");
+}
+function gotosettings() {
+    window.location.replace("settings.html");
+}

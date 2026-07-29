@@ -6,7 +6,7 @@ body {
     height: 100vh;
     max-height: 100vh;
     overflow: hidden;
-    background-color: #212A37;
+    background-color: #2A2A2A;
 }
 .div1 {
     display: flex;
@@ -60,15 +60,12 @@ body {
     border-radius: 0.75rem;
     padding: 20px;
     background-color: lightgrey;
-    mix-blend-mode: screen;
     width: 182px;
     height: 219px;
-    animation: float 3s ease-in-out infinite;
+    transition: box-shadow 0.2s ease;
 }
-@keyframes float {
-    0% { transform: translateY(25px); }
-    50% { transform: translateY(35px); }
-    100% { transform: translateY(25px); }
+.weatherdiv:hover {
+    box-shadow: rgba(150, 140, 140, 0.25) 0px 25px 50px -12px;
 }
 .countryNcity {
     font-family: "Roboto Slab";
@@ -85,11 +82,6 @@ body {
     text-align: center;
     color: black;
 }
-.bg {
-    object-fit: cover;
-    position: absolute;
-    z-index: -1;
-}
 .homebtn {
     background-color: lightgrey;
     border-top-right-radius: 0.75rem;
@@ -103,7 +95,6 @@ body {
     display: flex;
     align-content: center;
     justify-content: end;
-    mix-blend-mode: screen;
 }
 .homebtn:hover {
     margin-left: 0px;
@@ -117,7 +108,7 @@ body {
 .curtain {
     height: 100%;
     width: 100%;
-    background-color: #101720;
+    background-color: #242526;
     position: absolute;
     z-index: 100;
     transition: transform 0.75s  ;
@@ -141,8 +132,8 @@ body {
     border-color: white;
     border-style: double;
     border-radius: 5px;
-    scale: 125%;
     font-family: "Roboto Slab";
+    font-size: 15px;
 }
 .warning {
     margin: 0;
@@ -195,7 +186,6 @@ body {
     display: flex;
     align-content: center;
     justify-content: end;
-    mix-blend-mode: screen;
 }
 .settingsbtn:hover {
     margin-left: 0px;
@@ -204,18 +194,15 @@ body {
     position: absolute;
     right: 300px;
     border-radius: 0.75rem;
-    width: 300px;
-    height: 300px;
-    mix-blend-mode: screen;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    isolation: isolate;
+    width: 320px;
+    height: 320px;
+    transition: box-shadow 0.2s ease;
 }
 .stickynotes {
     position: absolute;
     border-radius: 0.75rem;
     padding: 10px;
     background-color: lightgrey;
-    mix-blend-mode: screen;
     width: 300px;
     height: 300px;
     resize: none;
@@ -234,7 +221,6 @@ body {
     cursor: default;
 }
 .notesdiv:hover {
-    transform: translateY(-4px); 
     box-shadow: rgba(150, 140, 140, 0.25) 0px 25px 50px -12px;
 }
 .savebtn {
