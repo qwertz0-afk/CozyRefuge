@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
-        <link rel="stylesheet" type="text/css" href="../css/primeflex/primeflex.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/primeflex/primeflex.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="../script/script.js" defer></script>
-        <script src="https://kit.fontawesome.com/08bfc793cb.js" crossorigin="anonymous"></script>
+        <script src="script/script.js" defer></script>
         <title>Cozy Refuge</title>
     </head>
     <body>
@@ -15,13 +16,16 @@
             <p class="title font-bold m-5 select-none text-2xl">Cozy Refuge</p>
         </div>
         <div class="div1">
-            <p class="font-bold select-none text-xl enterpassword">Enter a password</p>
-                <input id="pass" type="password" placeholder="Enter a password" class="outline-none passinput">
-            <p id="warn" class="warning font-bold select-none text-sm opacity-0"></p>
-            <div class="btn_container">
-                <button class="btn p-3 border-none cursor-pointer font-bold text-base" id="firstbutton">Login</button>
+            <div class="login-box">
+                <p class="font-bold select-none text-xl loginacctxt">Login to your account</p>
+                <input id="user" type="text" placeholder="Username" class="outline-none passinput">
+                <input id="pass" type="password" placeholder="Password" class="outline-none passinput">
+                <p id="warn" class="warning font-bold select-none text-xs opacity-0 absolute">Username or password is incorrect</p>
+                <div class="btn_container">
+                    <button class="btn p-3 border-none cursor-pointer font-bold text-base" id="firstbutton">Login</button>
+                </div>
             </div>
         </div>
-        <p id="server-warning" class="font-bold select-none text-xl hidden fixed serverwarning" style="color: white; font-family: 'Roboto Slab';">Server is not responding !</p>
+        <p id="server-warning" class="font-bold select-none text-xl hidden fixed serverwarning" style="color: white; font-family: 'Open Sans', sans-serif;">Server is not responding !</p>
     </body>
 </html>

@@ -5,6 +5,7 @@ const curtain = document.getElementById("curtain");
 const leftarrow = document.getElementById("arrow_left");
 const warnT = document.getElementById("warn");
 const passwordinput = document.getElementById("pass");
+const userinput = document.getElementById("user");
 const circle = document.getElementById("circle");
 const serverwarning = document.getElementById("server-warning");
 const stickynotes = document.getElementById("stickynotes");
@@ -15,8 +16,13 @@ if (curtain) {
         });
     });
 }
-if (passwordinput) {
+if (passwordinput && userinput) {
     passwordinput.addEventListener("keyup", (e) => {
+        if (e.key == "Enter") {
+            passcheck()
+        }
+    })
+    userinput.addEventListener("keyup", (e) => {
         if (e.key == "Enter") {
             passcheck()
         }
@@ -73,15 +79,18 @@ function weatherupdate() {
 }
 function passcheck() {
     const password = passwordinput.value;
-    if (password == "") {
-        warnT.textContent = "Provide a password";
+    const user = userinput.value;
+    const info = {
+        username: `${user}`,
+        password: `${password}`
+    };
+    if (password == "" || userinput == "") {
         warnT.classList.replace("opacity-0", "opacity-100");
-        warnT.classList.remove("absolute");
     }
     else {
-        axios.post('http://localhost:3000/pass', password, {
+        axios.post('http://localhost:3000/pass', info, {
         headers: {
-            'Content-Type': 'text/plain'
+            'Content-Type': 'application/json'
         }
         })
         .then(response => {
@@ -93,36 +102,10 @@ function passcheck() {
                 }, 750);
             }
             else {
-                warnT.textContent = "Password is incorrect";
                 warnT.classList.replace("opacity-0", "opacity-100");
-                warnT.classList.remove("absolute");
                 passwordinput.value = "";
+                userinput.value = "";
             }
         });
     }
-}
-if (stickynotes) {
-    axios.get('http://localhost:3000/savenotes')
-    .then(response => {
-        const notes = response.data;
-        stickynotes.value = notes;
-    });
-}
-function saveNotes() {
-    const notes = document.getElementById("stickynotes").value;
-    axios.post('http://localhost:3000/savenotes', notes, {
-        headers: {
-            'Content-Type': 'text/plain'
-        }
-    });
-}
-function clearNotes() {
-    const notes = document.getElementById("stickynotes");
-    notes.value = "";
-}
-function gotohome() {
-    window.location.replace("home.html");
-}
-function gotosettings() {
-    window.location.replace("settings.html");
 }

@@ -4,14 +4,16 @@ const app = express();
 
 app.use(cors());          
 app.use(express.text());  
+app.use(express.json());  
 
-let notes = "";
 port = process.env.PORT || 3000;
 
 app.post('/pass', (request, response) => {
     const receivedData = request.body;
     let decision = "no";
-    if (receivedData == "amine") {
+    const username = receivedData.username;
+    const password = receivedData.password;
+    if (username == "root" && password == "root2026") {
         decision = "yes";
     }
     response.send(decision);

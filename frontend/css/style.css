@@ -7,6 +7,8 @@ body {
     max-height: 100vh;
     overflow: hidden;
     background-color: #2A2A2A;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
 }
 .div1 {
     display: flex;
@@ -14,7 +16,19 @@ body {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    gap: 10px;
+}
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    height: 380px;
+    width: 350px;
+    background-color: #dddddd;
+    z-index: 0;
+    border-radius: 0.75rem;
+    box-shadow: rgba(150, 140, 140, 0.25) 0px 25px 50px -12px;
 }
 .btn {
     position: relative;
@@ -52,7 +66,6 @@ body {
 .title {
     color: white;
     position: absolute;
-    font-family: "Roboto Slab";
 }
 .weatherdiv {
     position: absolute;
@@ -68,17 +81,14 @@ body {
     box-shadow: rgba(150, 140, 140, 0.25) 0px 25px 50px -12px;
 }
 .countryNcity {
-    font-family: "Roboto Slab";
     text-align: center;
     color: black;
 }
 .temperature {
-    font-family: "Roboto Slab";
     text-align: center;
     color: black;
 }
 .description {
-    font-family: "Roboto Slab";
     text-align: center;
     color: black;
 }
@@ -103,7 +113,6 @@ body {
     text-align: center;
     flex-grow: 1;
     color: black;
-    font-family: "Roboto Slab";
 }
 .curtain {
     height: 100%;
@@ -129,23 +138,24 @@ body {
 }
 .passinput {
     border-width: 3px;
-    border-color: white;
-    border-style: double;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: grey;
     border-radius: 5px;
-    font-family: "Roboto Slab";
+    border-style: solid;
     font-size: 15px;
+    background-color: transparent;
 }
 .warning {
-    margin: 0;
+    margin-top: 135px;
     padding: 0;
-    color: white;
-    font-family: "Roboto Slab";
+    color: rgb(139, 7, 7);
 }
-.enterpassword {
+.loginacctxt {
     margin: 0;
     padding: 0;
-    color: white;
-    font-family: "Roboto Slab";
+    color: black;
 }
 .btn_container {
     display: flex;
